@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>n8n AI Bot</title>
+  <!-- Link to external stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       MAIN CHAT CONTAINER
+  ═══════════════════════════════════════ -->
+  <div class="chat-wrapper">
+
+    <!-- Header -->
+    <header class="chat-header">
+      <div class="header-dot"></div>
+      <span class="header-title">n8n AI Bot</span>
+      <span class="header-status">online</span>
+    </header>
+
+    <!-- Message Display Area — messages are injected here by script.js -->
+    <main class="chat-messages" id="chatMessages">
+      <!-- Welcome message shown on load -->
+      <div class="message bot-message">
+        <div class="message-bubble">
+          Hey there 👋 — ask me anything. I'm connected via your n8n webhook.
+        </div>
+        <span class="message-time">just now</span>
+      </div>
+    </main>
+
+    <!-- Typing / Loading Indicator (hidden by default) -->
+    <div class="typing-indicator" id="typingIndicator" aria-live="polite" aria-label="Bot is typing">
+      <span></span><span></span><span></span>
+    </div>
+
+    <!-- Input Row -->
+    <footer class="chat-footer">
+      <input
+        type="text"
+        id="userInput"
+        class="chat-input"
+        placeholder="Type your message…"
+        autocomplete="off"
+        aria-label="Message input"
+      />
+      <!-- Send button triggers sendMessage() in script.js -->
+      <button id="sendBtn" class="send-btn" onclick="sendMessage()" aria-label="Send message">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+      </button>
+    </footer>
+
+  </div>
+
+  <!-- Link to external JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
